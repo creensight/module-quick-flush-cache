@@ -1,0 +1,26 @@
+<?php
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<div class="fullpagecache-image-loader grid-loader">
+    <div class="loader">
+        <img src="<?= /* @noEscape */ $block->getViewFileUrl('images/loader-1.gif') ?>"
+             alt="<?= /* @noEscape */ __('Loading') ?>">
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "fullPageCacheAjax":{
+                "flushCacheUrl": "<?= /* @noEscape */ $block->getUrl('quickflushcache/cache/flushSystem') ?>",
+                "flushCacheIndexUrl": "<?= /* @noEscape */ $block->getUrl('quickflushcache/cache/index') ?>",
+                "reindexUrl": "<?= /* @noEscape */ $block->getUrl('quickflushcache/indexer/reindex') ?>",
+                "reindexListUrl": "<?= /* @noEscape */ $block->getUrl('quickflushcache/indexer/list') ?>"
+            }
+        }
+    }
+</script>

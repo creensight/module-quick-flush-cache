@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="quickflushcache" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+            <label>Quick Flush Cache</label>
+            <tab>creensight</tab>
+            <resource>CreenSight_QuickFlushCache::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" canRestore="1">
+                <label>General</label>
+                <field id="enabled_flush_cache" translate="label comment" type="select" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Enable Quick Flush Cache</label>
+                    <source_model>CreenSight\QuickFlushCache\Model\Config\Source\System\YesNo</source_model>
+                    <comment><![CDATA[With automatic mode, the cache is flushed automatically right when the page is reloaded<br>With manual mode, the cache is flushed manually when admin clicks on Flush Now button]]></comment>
+                </field>
+                <field id="enabled_reindex" translate="label comment" type="select" sortOrder="20" showInDefault="1" canRestore="1">
+                    <label>Enable Quick Reindex</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
